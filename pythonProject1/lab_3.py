@@ -19,19 +19,28 @@ print("List of squares from", (start_num, end_num))
 print(squares_list)
 
 
-# Task3
-
+# Task 3
+# Task 4
+# Task 5
 class SquareGenerator:
     def __init__(self):
-        self.start = int(input("Enter start: "))
-        self.ends = int(input("Enter end: "))
+        try:
+            self.start = int(input("Enter start: "))
+            self.end = int(input("Enter end: "))
+            if self.end <= self.start:
+                raise ValueError("End value must be smaller than start or equal .")
+        except ValueError as e:
+            print(e)
+            self.start = 0
+            self.end = 0
 
         # Generate a list of squares
-        squares = [x ** 2 for x in range(self.start, self.ends)]
-        print("Squares:", squares)
-#Task4
+        squares = [x ** 2 for x in range(self.start, self.end)]
+        print("Squares: ", squares)
+
+        # Calculate square roots
         roots = [np.sqrt(x) for x in squares]
-        print("Square roots:", roots)
+        print("Square roots: ", roots)
 
 start_class = SquareGenerator()
 
