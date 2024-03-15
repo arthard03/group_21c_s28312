@@ -1,4 +1,6 @@
 # Task1
+import numpy as np
+
 squares = [x ** 2 for x in range(1, 11)]
 
 print(squares)
@@ -24,9 +26,12 @@ class SquareGenerator:
         self.start = int(input("Enter start: "))
         self.ends = int(input("Enter end: "))
 
+        # Generate a list of squares
         squares = [x ** 2 for x in range(self.start, self.ends)]
         print("Squares:", squares)
+#Task4
+        roots = [np.sqrt(x) for x in squares]
+        print("Square roots:", roots)
 
 start_class = SquareGenerator()
 
-#Task 4
